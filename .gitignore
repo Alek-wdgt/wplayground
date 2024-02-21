@@ -1,0 +1,53 @@
+# Application
+#web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+web/app/cache/*
+.idea/vcs.xml
+web/app/themes/.budfiles/*
+web/app/themes/node_modules/*
+web/app/public/*
+web/app/vendor
+.DS_Store
+config/.DS_Store
+web/.DS_Store
+web/app/.DS_Store
+web/app/plugins/.DS_Store
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Logs
+*.log
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor
+!vendor/.gitkeep
+
+# WP-CLI
+wp-cli.local.yml
+wp-cli.phar
+
+# Editors specific (PhpStorm and VS Code)
+.idea/
+.vscode/*
+
+#composer.lock and DS_Store
+../../../../composer.lock
+../../../../.DS_Store
+
+#Robots
+web/robots.txt
+
+WP
+/zubar/wp-config.php
+/listing/wp-config.php

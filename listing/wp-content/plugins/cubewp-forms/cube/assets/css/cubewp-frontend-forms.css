@@ -1,0 +1,105 @@
+.cwp-custom-form .cwp-frontend-section-container {
+    margin-bottom: 30px;
+}
+
+.cwp-frontend-form-container .cwp-custom-form input[type=submit] {
+    margin: 20px auto;
+}
+
+.cwp-frontend-form-container .cwp-custom-form .cwp-from-submit.position-right {
+    float: right;
+}
+
+.cwp-frontend-form-container .cwp-custom-form .cwp-from-submit.position-left {
+    float: left;
+}
+
+.cwp-frontend-form-container .cwp-custom-form .cwp-from-submit.position-center {
+    display: block;
+}
+
+.cwp-custom-form .cwp-frontend-section-heading-container {
+    border-bottom: 0;
+}
+
+.cwp-frontend-form-container .cwp-custom-form .cwp-frontend-section-container .cwp-frontend-section-content-container {
+    border-top: 1px solid #e0e0e0;
+}
+
+.ui-datepicker td a {
+    padding: 10px !important;
+}
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+    background: #fff !important;
+    padding: 20px;
+}
+
+.cwp-ui-datepicker .ui-datepicker .ui-datepicker-buttonpane.ui-widget-content button {
+    background: #007bff;
+    border: 1px solid #2271b1;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 16px 15px 16px;
+    padding: 8px 15px;
+    text-decoration: none;
+    text-shadow: none;
+    border-radius: 2px;
+}
+
+.cwp-ui-datepicker .ui-datepicker .ui-timepicker-div .ui_tpicker_hour .ui_tpicker_hour_slider select,
+.cwp-ui-datepicker .ui-datepicker .ui-timepicker-div .ui_tpicker_minute .ui_tpicker_minute_slider select,
+.cwp-ui-datepicker .ui-datepicker .ui-timepicker-div .ui_tpicker_second .ui_tpicker_second_slider select {
+    padding: 2px;
+    max-width: 70px;
+    margin-right: 0;
+    border-radius: 0;
+    box-shadow: unset !important;
+    margin-top: 11px;
+    font-size: 12px;
+}
+
+.cwp-ui-datepicker .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-year,
+.cwp-ui-datepicker .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month {
+    border: 1px solid #dcd7ca;
+    height: 25px;
+    padding: 0 5px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000 !important;
+    border-radius: 0;
+    box-shadow: unset;
+    width: calc(100% / 2 - 15px) !important;
+}
+
+.ui-datepicker th {
+    padding: 6px;
+    text-align: center;
+    font-weight: 700;
+    border: 0;
+    width: 5px !important;
+}
+.cwp-ui-datepicker .ui-datepicker tbody tr td.ui-state-disabled {
+    background: #fff0 !important;
+}
+
+.cwp-ui-datepicker .ui-datepicker tbody tr td {
+    padding:  5px 0 !important;
+    text-align: center;
+    border: unset !important;
+    background: #f3f3f3;
+}
+#ui-datepicker-div.ui-widget {
+    width: 340px;
+}
+
+.ui-timepicker-div dl {
+    padding: 0 15px;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    border: unset;
+    margin-top: 16px;
+}
