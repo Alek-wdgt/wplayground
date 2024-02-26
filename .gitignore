@@ -49,5 +49,9 @@ wp-cli.phar
 web/robots.txt
 
 WP
-/zubar/wp-config.php
-/listing/wp-config.php
+zubar/wp-config.php
+listing/wp-config.php
+web/app/themes/wdigitpro/install_nvm.sh
+listing/wp-config-sample.php
+
+/listing/.htaccess

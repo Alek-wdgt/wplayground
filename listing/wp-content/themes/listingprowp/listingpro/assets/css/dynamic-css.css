@@ -64,12 +64,12 @@
         .lp-header-search-wrap{
 
         
-        background-image: url(http://listingpro-design.local/wp-content/uploads/2023/08/lp-classic2-hero-v2-opt-e1693317712383-7.png);
+        background-image: url(https://classic.listingprowp.com/wp-content/uploads/2017/01/home-banner.jpg);
 
             }
         .lp-header-search-wrap-banner-height{
         
-        height: 700px;
+        height: 610px;
 
             }
         .lp-header-search-wrap-set-top{
@@ -78,7 +78,7 @@
 
         .header-container-height{
 
-        height: 700px;
+        height: 610px;
 
         }
         .lp-category-abs2 .lp-category-abs2-inner span,
@@ -281,13 +281,13 @@
         .lp-header-search .lp-header-search-tagline,
         .left-heading .lp-sub-title,
         .sidebar-banner-des,.lp-header-search-tagline-sidebar-banner span{
-        font-family: Open Sans;
+        font-family: Quicksand;
         }
 
         .lp-join-now li a{
 
         
-            font-family: Roboto
+            font-family: Quicksand
             
         }
 
@@ -422,10 +422,7 @@
             opacity: 1;        }
 
 
-                    div.lp-top-notification-bar{
-            top: 32px !important;
-            }
-                    .banner-view-classic .lp-home-categoires li a,
+                .banner-view-classic .lp-home-categoires li a,
         .home-categories-area .new-banner-category-view2 li a span p#cat-img-bg,
         .home-categories-area .new-banner-category-view1 li a,
         .banner-default-view-category-2 .lp-home-categoires li a span p#cat-img-bg,
@@ -454,19 +451,19 @@
             line-height: 80px;
         }
         .lp-home-categoires li a:hover {
-        background: #2458FF !important;
+        background: #363F48 !important;
         }
         .home-categories-area .new-banner-category-view2 li a:hover span p#cat-img-bg, .home-categories-area .new-banner-category-view1 li a:hover, .banner-default-view-category-2 .lp-home-categoires li a:hover span p#cat-img-bg, .banner-view-cat-tranparent-category .lp-upper-cat-view3 li a:hover span p#cat-img-bg, .home-categories-area .lp-inside-search-view1 li a:hover, .home-categories-area .lp-inside-search-view2 li a:hover span p#cat-img-bg, .banner-view-cat-tranparent-category .lp-upper-cat-view4 li a:hover,.home-categories-area .banner-default-view-category1 li a:hover, .home-categories-area .banner-default-view-category2 li a:hover span p#cat-img-bg,
         .banner-default-view-category4.lp-home-categoires li a:hover,
         .banner-default-view-category3.lp-home-categoires li a:hover,.new-banner-category-view.lp-home-categoires li a:hover,.new-banner-category-view3.lp-home-categoires li a:hover,
         .lp-upper-cat-view1.lp-home-categoires li a:hover,.lp-upper-cat-view2.lp-home-categoires li a:hover,.lp-inside-search-view.lp-home-categoires li a:hover,.lp-inside-search-view3.lp-home-categoires li a:hover, .home-categories-area .lp-home-categoires.new-banner-category-view4 li a:hover{
-        background: #2458FF !important;
+        background: #363F48 !important;
         }
         .home-categories-area .lp-home-categoires.category-view-bg-transparent li a{
         background: rgba(36,88,255,0.4) !important;
         }
         .home-categories-area .lp-home-categoires.category-view-bg-transparent li a:hover{
-        background: rgba(36,88,255,0.4) !important;
+        background: rgba(54,63,72,0.4) !important;
         }
         .lp-home-banner-contianer-inner-new-search .lp-search-description p, .home-categories-area .new-banner-category-view2 li a span, .banner-default-view-category-2 .lp-home-categoires li a span, .home-categories-area .lp-inside-search-view2 li a span,.home-categories-area .banner-default-view-category2 li a span, .home-categories-area ul.lp-home-categoires li a span{
         color: #FFFFFF;
@@ -566,7 +563,7 @@
         .footer-style8,
         .footer-style10,
         .footer-style11{
-        background-color: #F9F9FB;
+        background-color: #112B3C;
         }
         .footer-style1 .footer-bottom-bar,
         .footer-style3,
@@ -578,7 +575,7 @@
         .footer-style8-bg-logo,
         .footer-style9,
         .footer10-bottom-area{
-        background-color: #F4F4F5;
+        background-color: #16212C;
         }
         .footer-style1 .footer-upper-bar,
         .footer-style1 .footer-upper-bar a,
@@ -586,11 +583,9 @@
         .padding-top-60 .widget a,
         .padding-top-60 .widget span,
         .padding-top-60 .widget p{
-                    color: #282B42 !important;
-            border-color: #282B42                    }
+                }
         .footer-about-company li:before{
-                    background-color: #4F5685 !important;
-                    }
+                }
         footer.style3 .container,
         footer.style3 .copyrights,
         footer.style3 .footer-menu ul li a,
@@ -607,9 +602,7 @@
         .footer4-bottom-area .footer-menu li a,
         .footer4-bottom-area .copyrights,
         .footer5-bottom-area .copyrights{
-                    color: #4F5685 !important;
-            border-color: #4F5685;
-                    }
+                }
                     .header-front-page-wrap .lp-header-full-width .lp-menu-bar{
             background-color: transparent;
             }
@@ -631,11 +624,22 @@
             color: #FFFFFF;
             border-color: #FFFFFF;
             }
-                        .lp-topbar {
+                            .header-front-page-wrap .lp-menu-bar, .header-normal .lp-menu-bar.lp-header-full-width {
+                background-color: transparent                }
+                .header-front-page-wrap .header-right-panel .lp-menu ul li a,
+                .header-front-page-wrap .lp-menu ul li.page_item_has_children::after,
+                .header-front-page-wrap .lp-menu ul li.menu-item-has-children::after,
+                .header-front-page-wrap .lp-join-now a, .lp-add-listing-btn li a {
+                color: #FFFFFF;
+                }
+                            .lp-topbar {
             background-color: #363F48 !important;
             }
-                                        .header-container.lp-header-bg{
-                background-image:url(http://listingpro-design.local/wp-content/uploads/2023/08/lp-classic2-hero-v2-opt-e1693317712383-7.png);
+                            .listing-page{
+            background-image:url(https://classic.listingprowp.com/wp-content/uploads/2017/01/header-banner.jpg);
+            }
+                                .header-container.lp-header-bg{
+                background-image:url(https://classic.listingprowp.com/wp-content/uploads/2017/01/home-banner.jpg);
                 background-repeat:no-repeat;
                 background-position:center top;
                 }
@@ -646,12 +650,12 @@
 			color: #2458FF;
 		}
         .call-to-action2 h1{
-        background-image:url(http://listingpro-design.local/wp-content/themes/listingpro/assets/images/new/hb.png);
+        background-image:url(http://listing.wdpro.development/wp-content/themes/listingprowp/listingpro/assets/images/new/hb.png);
         background-repeat:no-repeat;
         background-position:center center;
         }
         .listing-app-view .admin-top-section .user-details .user-portfolio,.listing-app-view .user-detail-wrap{
-        background-image:url(http://listingpro-design.local/wp-content/uploads/2023/08/adminbg-7.jpg);
+        background-image:url(https://classic.listingprowp.com/wp-content/themes/listingpro/assets/images/admin/adminbg.jpg);
         background-repeat:no-repeat;
         background-position:center center;
         }
@@ -713,7 +717,7 @@
             background-color: rgba(0, 0, 0, 0.7);
             }
                             .lp-home-banner-contianer {
-            height: 700px;
+            height: 610px;
             }
                     .lp-home-banner-contianer-1 {
             height: 370px;
@@ -1029,38 +1033,35 @@
         border-collapse: collapse;
         }
                     .lp-menu-container .lp-menu > div > ul > li > a{
-                            font-family: Open Sans;
+                            font-family: Quicksand;
                                                             }
                             body{
-                            font-family: Roboto;
+                            font-family: Quicksand;
                                                     font-weight:400;
                                         color:#7f7f7f;
                                     }
                             h1, h1 a, .lp-h1, .lp-h1 a {
-                            font-family: Open Sans;
-                                        font-size:49px;
-                                        font-weight:700;
-                                        color:#333;
-                                        line-height:66px;
-                        }
+                            font-family: Quicksand;
+                                                                color:#333;
+                                    }
                             h2, h2 a, .lp-h2, .lp-h2 a {
-                            font-family: Open Sans;
+                            font-family: Quicksand;
                                                                 color:#333;
                                     }
                             h3, h3 a, .lp-h3, .lp-h3 a {
-                            font-family: Open Sans;
+                            font-family: Quicksand;
                                                                 color:#333;
                                     }
                             h4, .lp-h4, h4 a, .lp-h4 a {
-                            font-family: Open Sans;
+                            font-family: Quicksand;
                                                                 color:#333;
                                     }
                             h5, .lp-h5, h5 a, .lp-h5 a {
-                            font-family: Open Sans;
+                            font-family: Quicksand;
                                                                 color:#333;
                                     }
                             h6, .lp-h6, h6 a, .lp-h6 a {
-                            font-family: Open Sans;
+                            font-family: Quicksand;
                                         font-size:16px;
                                                     color:#333;
                                         line-height:27px;
@@ -1073,7 +1074,7 @@
             background: transparent !important;
         }
         .home-categories-area .banner-default-view-category2 li a:hover p#cat-img-bg {
-            background: #2458FF !important;
+            background: #363F48 !important;
         }
         .lp-upper-cat-view3.lp-home-categoires li a {
             background: transparent !important;
@@ -1154,7 +1155,7 @@
         color:#fff !important;
         }
 		body .home-categories-area .lp-home-categoires li a:hover {
-        background: #2458FF !important;
+        background: #363F48 !important;
         }
 
         .search-row-classic .lp_add_more_filter a:hover,
@@ -1192,4 +1193,38 @@
             color: #2458FF;
         }
 		<!-- classic new style end !-->
-                        
+                #header{
+margin: 0 auto;
+}
+.get-directions {
+    left:0px;
+    right: 2px !important;
+    z-index: 10000;
+}
+.get-directions &gt; a {
+    float:right;
+}
+.leaflet-container .leaflet-control-attribution {
+    display:none;
+}
+body.single form #cities {
+    padding-left: 67px;
+}
+.purchase-wrapper {
+    bottom: 83px !important;
+}
+.grid_view2 .lp-grid-box-description h4{
+    overflow: visible;
+}
+@media only screen and (max-width: 780px) {
+  .purchase-wrapper {
+        display: none;
+    }
+}		
+.lp-home-banner-contianer-inner.lp-home-banner-contianer-inner-new-search .lp-search-description p {
+    color: #000 !important;
+}
+
+ul.lp-home-categoires.lp-inside-search-view2 li a span {
+    color: #000;
+}        

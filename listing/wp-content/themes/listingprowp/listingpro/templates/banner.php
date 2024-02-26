@@ -328,10 +328,10 @@ if (is_front_page() && is_home()) {
               <div class="row">
                <div class="col-md-12 col-sm-12 text-center lp_auto_loc_container">
                 <?php if (!empty($top_main_title)) { ?>
-                 <h1 data-locnmethod="<?php echo wp_kses_post($locationType); ?>">Zika<?php echo wp_kses_post($top_main_title); ?></h1>
+                 <h1 data-locnmethod="<?php echo wp_kses_post($locationType); ?>">Zika<?php echo wp_kses_post($top_main_title); ?>Djole</h1>
                 <?php } ?>
                 <?php if (!empty($top_title)) { ?>
-                 <p class="lp-banner-browse-txt"><?php echo wp_kses_post($top_title); ?></p>
+                 <p class="lp-banner-browse-txt">Descritpion<?php echo wp_kses_post($top_title); ?></p>
                 <?php } ?>
                </div>
                <div class="col-md-8 col-xs-12 col-md-offset-2 col-sm-offset-0">
