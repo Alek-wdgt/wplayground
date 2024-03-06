@@ -6459,19 +6459,33 @@ Redux::setSection($opt_name, array(
             ),
             'default' => 'no',
         ),
+//        array(
+//            'id' => 'listing_slug',
+//            'type' => 'text',
+//            'title' => __('listing slug', 'listingpro'),
+//            'subtitle' => __('Default is "listing"', 'listingpro'),
+//            'default' => 'listing',
+//        ),
         array(
             'id' => 'listing_slug',
             'type' => 'text',
-            'title' => __('listing slug', 'listingpro'),
-            'subtitle' => __('Default is "listing"', 'listingpro'),
-            'default' => 'listing',
+            'title' => __('Directory Slug', 'listingpro'), // Change the text label to "Directory Slug" and make it translatable
+            'subtitle' => __('Default is "directory"', 'listingpro'), // Update the subtitle accordingly
+            'default' => __('directory', 'listingpro'), // Change the default value to "directory" and make it translatable
         ),
         array(
             'id' => 'listing_cat_slug',
             'type' => 'text',
-            'title' => __('listing category slug', 'listingpro'),
-            'subtitle' => __('Default is "listing-category"', 'listingpro'),
-            'default' => 'listing-category',
+            'title' => __('Directory Slug', 'listingpro'),
+            'subtitle' => __('Default is "directories"', 'listingpro'),
+            'default' => __('directories', 'listingpro'),
+        ),
+        array(
+            'id' => 'sr_listing_cat_slug',
+            'type' => 'text',
+            'title' => __('Directory Slug', 'listingpro'),
+            'subtitle' => __('Default is "directories"', 'listingpro'),
+            'default' => __('srdirectories', 'listingpro'),
         ),
         array(
             'id' => 'listing_loc_slug',

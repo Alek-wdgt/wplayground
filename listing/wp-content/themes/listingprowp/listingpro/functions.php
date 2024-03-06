@@ -6774,3 +6774,37 @@ if (!function_exists('lp_mail_headers_remove')) {
         $pattern = '/\b(fa(-[a-z]+)?)\b/';
         return preg_match($pattern, $string) === 1;
     }
+    function custom_polylang_language_switcher() {
+    if ( function_exists('pll_the_languages') ) {
+        $languages = pll_the_languages(array('raw'=>1));
+        if ($languages) {
+            echo '<ul class="language-switcher">';
+            foreach ($languages as $language) {
+                echo '<li class="language-item">';
+                echo '<a href="' . esc_url($language['url']) . '">' . esc_html($language['name']) . '</a>';
+                echo '</li>';
+            }
+            echo '</ul>';
+        }
+    }
+}
+
+// Hook the function into all menus
+function add_polylang_language_switcher_to_menus( $items, $args ) {
+    $menu_locations = array(
+        'primary',
+        'primary_inner',
+        'top_menu',
+        'footer_menu',
+        'mobile_menu',
+        'category_menu',
+    );
+
+    if( in_array($args->theme_location, $menu_locations) ) {
+        $items .= '<li class="menu-item language-switcher-menu-item">';
+        $items .= custom_polylang_language_switcher();
+        $items .= '</li>';
+    }
+    return $items;
+}
+add_filter( 'wp_nav_menu_items', 'add_polylang_language_switcher_to_menus', 10, 2 );

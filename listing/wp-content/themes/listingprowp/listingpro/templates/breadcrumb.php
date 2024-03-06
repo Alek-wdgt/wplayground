@@ -16,7 +16,8 @@ if (!function_exists('listingpro_breadcrumbs')) {
          
 
          
-        echo '<ul class="breadcrumbs djole"><li><a href="' . $homeLink . '">' . $home . '</a></li> ';
+        echo '<ul class="breadcrumbs"><li><a href="' . $homeLink . '">' . $home . '</a></li>';
+//<li><a href="/directory/">Directory</a> </li>
          
         if (is_category()) {
             $thisCat = get_category(get_query_var('cat'), false);

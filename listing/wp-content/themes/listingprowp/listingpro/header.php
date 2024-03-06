@@ -139,3 +139,4 @@ if( $lp_theme_loader_switch && !empty($lp_theme_loader) ){
 <?php
 }
 ?>
+    <h1>DJole</h1>

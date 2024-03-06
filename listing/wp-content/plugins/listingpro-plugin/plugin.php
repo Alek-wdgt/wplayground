@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: ListingPro Plugin
-Plugin URI: 
+Plugin URI:
 Description: This plugin Only compatible With listingpro Theme By CridioStudio.
 Version: 2.9.3
 Author: CridioStudio (Dev Team)
@@ -23,9 +23,9 @@ function listingpro_plugin_uploader()
     /* end js by haroon */
 
     wp_register_script('main', plugins_url('/assets/js/main.js', __FILE__), array('jquery'));
-	if (!empty(lp_theme_option('listingpro_scastripe_switch')) && lp_theme_option('listingpro_scastripe_switch') == 'yes' ) {
-		wp_register_script('stripe-sca', plugins_url('/assets/js/stripe-sca.js', __FILE__), array('jquery'));
-	}
+    if (!empty(lp_theme_option('listingpro_scastripe_switch')) && lp_theme_option('listingpro_scastripe_switch') == 'yes') {
+        wp_register_script('stripe-sca', plugins_url('/assets/js/stripe-sca.js', __FILE__), array('jquery'));
+    }
     wp_enqueue_script('main');
     wp_enqueue_script('lpAutoPlaces', LISTINGPRO_PLUGIN_URI . 'assets/js/auto-places.js', 'jquery', '', true);
 }
@@ -156,7 +156,6 @@ function lp_price_plan_columns_content($column, $post_id)
 {
 
     if ($column == 'number-of-listings') {
-
         $lp_listing_arr = array(
             'post_type' => 'listing',
             'post_status' => 'publish',
@@ -177,16 +176,33 @@ add_action('manage_price_plan_posts_custom_column', 'lp_price_plan_columns_conte
 
 function post_type_listing()
 {
-
+//Djura
     global $listingpro_options;
-    $listingSLUG = '';
-    if (class_exists('ReduxFramework')) {
-        $listingSLUG = $listingpro_options['listing_slug'];
-        $listingSLUG = trim($listingSLUG);
+//    $listingSLUG = 'directory';
+//    if (class_exists('ReduxFramework')) {
+//        $listingSLUG = $listingpro_options['listing_slug'];
+//        $listingSLUG = trim($listingSLUG);
+//    }
+//    if (empty($listingSLUG)) {
+//        $listingSLUG = 'directory';
+//    }
+
+  // Get the default slug value
+    $default_listingSLUG = __('directory', 'listingpro-plugin');
+
+
+
+
+  // Check if ReduxFramework class exists and get the translated value if available
+    if (class_exists('ReduxFramework') && isset($listingpro_options['listing_slug'])) {
+        $listingSLUG = trim($listingpro_options['listing_slug']);
+    } else {
+        $listingSLUG = $default_listingSLUG;
     }
-    if (empty($listingSLUG)) {
-        $listingSLUG = 'listing';
-    }
+
+  // Fallback to default slug if translation not available
+    $listingSLUG = __($listingSLUG, 'listingpro-plugin');
+
 
     $labels = array(
         'name' => _x('Listings', 'post type general name', 'listingpro-plugin'),
@@ -207,20 +223,41 @@ function post_type_listing()
         'publicly_queryable' => true,
         'show_ui' => true,
         'query_var' => 'listing',
-        'rewrite'   => array('slug' => $listingSLUG),
+        'rewrite' => array(
+            'slug' => $listingSLUG . '/%listing-category%',
+            'with_front' => false,
+            'hierarchical' => true
+        ),
         'capability_type' => 'post',
         'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'show_in_rest'       => true,
         'supports' => array('title', 'editor', 'author', 'thumbnail', 'comments'),
+        'taxonomies' => array('listing-category'),
         'menu_icon' => plugins_url('listingpro-plugin/images/reviews.png', dirname(__FILE__))
     );
+
+
 
     register_post_type('listing', $args);
 }
 
+
 add_action('init', 'post_type_listing', 0);
+
+
+//Add filter to replace %listing-category% in permalink
+add_filter('post_type_link', function ($permalink, $post, $leavename) {
+  if ($post->post_type == 'listing') {
+    $terms = get_the_terms($post->ID, 'listing-category');
+    if (!empty($terms)) {
+      $listing_category = $terms[0]->slug;
+      $permalink = str_replace('%listing-category%', $listing_category, $permalink);
+    }
+  }
+  return $permalink;
+}, 10, 3);
 
 function post_type_form_fields()
 {
@@ -282,14 +319,19 @@ add_action('admin_menu', 'remove_post_custom_fields');
 function listing_category()
 {
     global $listingpro_options;
-    $listing_cat_slug = '';
+    $default_listingSLUG = __('directories', 'listingpro-plugin');
+    $listing_cat_slug ='';
     if (class_exists('ReduxFramework')) {
         $listing_cat_slug = $listingpro_options['listing_cat_slug'];
         $listing_cat_slug = trim($listing_cat_slug);
     }
     if (empty($listing_cat_slug)) {
-        $listing_cat_slug = 'listing-category';
+        $listing_cat_slug = 'directory';
     }
+
+  // Translate the slug
+
+
     register_taxonomy(
         'listing-category',
         'listing',
@@ -302,10 +344,15 @@ function listing_category()
             'show_ui' => true,
             'show_tagcloud' => false,
             'hierarchical' => true,
-            'rewrite'           => array('slug' => $listing_cat_slug, 'hierarchical' => true),
+            'rewrite' => array(
+                'slug' => $listing_cat_slug,
+                'with_front' => false,
+                'hierarchical' => true
+            ),
             'query_var'     => true,
             'public'            => true,
             'show_in_rest'       => true,
+
             'capabilities' => array(
                 'assign_terms' => 'assign_listing-category',
             )
@@ -339,7 +386,9 @@ function listing_features()
             ),
             'singular_name' => "Feature",
             'show_ui' => true,
-            'rewrite' => array('slug' => $listing_features_slug),
+            'rewrite' => array(
+                    'slug' => $listing_features_slug
+            ),
             'query_var'     => true,
             'public'            => true,
             'show_in_quick_edit' => false,
@@ -436,11 +485,11 @@ function listingpro_plugin_functions()
 
     include_once(WP_PLUGIN_DIR . "/listingpro-plugin/inc/paypal/campaign-save.php");
    
-	if (!empty(lp_theme_option('listingpro_scastripe_switch')) && lp_theme_option('listingpro_scastripe_switch') == 'yes' ) {
-		include_once(WP_PLUGIN_DIR . "/listingpro-plugin/inc/stripe/stripe-ajax-sca.php");
-	}else{
-		include_once(WP_PLUGIN_DIR . "/listingpro-plugin/inc/stripe/stripe-ajax.php");
-	}
+    if (!empty(lp_theme_option('listingpro_scastripe_switch')) && lp_theme_option('listingpro_scastripe_switch') == 'yes') {
+        include_once(WP_PLUGIN_DIR . "/listingpro-plugin/inc/stripe/stripe-ajax-sca.php");
+    } else {
+        include_once(WP_PLUGIN_DIR . "/listingpro-plugin/inc/stripe/stripe-ajax.php");
+    }
     include_once(WP_PLUGIN_DIR . "/listingpro-plugin/inc/2checkout/payment-campaigns.php");
     include_once(WP_PLUGIN_DIR . "/listingpro-plugin/inc/2checkout/payment.php");
 
@@ -568,7 +617,7 @@ if (!function_exists('event_meta_box')) {
         $event_ticket_url   =   get_post_meta($event_id, 'ticket-url', true);
         $lsiting_id         =   get_post_meta($event_id, 'event-lsiting-id', true);
 
-?>
+        ?>
         <div class="inside">
             <table class="form-table lp-metaboxes">
                 <tbody>
@@ -594,7 +643,9 @@ if (!function_exists('event_meta_box')) {
                             </label>
                         </th>
                         <td>
-                            <input <?php if (!empty($event_date)) : ?> value="<?php echo date('M d, Y', $event_date); ?>" <?php endif; ?> type="text" name="event_date" id="event_date">
+                            <input <?php if (!empty($event_date)) :
+                                ?> value="<?php echo date('M d, Y', $event_date); ?>" <?php
+                                   endif; ?> type="text" name="event_date" id="event_date">
                         </td>
                     </tr>
                     <tr id="lp_field_event_time">
@@ -614,7 +665,9 @@ if (!function_exists('event_meta_box')) {
                             </label>
                         </th>
                         <td>
-                            <input <?php if (!empty($event_date_e)) : ?> value="<?php echo date('M d, Y', $event_date_e); ?>" <?php endif; ?> type="text" name="event_date_e" id="event_date_e">
+                            <input <?php if (!empty($event_date_e)) :
+                                ?> value="<?php echo date('M d, Y', $event_date_e); ?>" <?php
+                                   endif; ?> type="text" name="event_date_e" id="event_date_e">
                         </td>
                     </tr>
                     <tr id="lp_field_event_time_e">
@@ -653,8 +706,7 @@ if (!function_exists('event_meta_box')) {
                 </tbody>
             </table>
         </div>
-<?php
-
+        <?php
     }
 }
 
@@ -665,7 +717,9 @@ if (!function_exists('save_event_metas')) {
             return;
         }
         $post_type = get_post_type($post_id);
-        if ("events" != $post_type) return;
+        if ("events" != $post_type) {
+            return;
+        }
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $event_date = strtotime(sanitize_text_field($_POST['event_date']));
